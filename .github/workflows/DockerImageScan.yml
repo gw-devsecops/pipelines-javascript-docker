@@ -53,5 +53,5 @@ jobs:
           artifact-type: containerImage
           scan-provider: trivy
           connection-string: ${{ secrets.GW_CICD_CONNECTION_STRING }}
-          subscription-token: ${{ secrets.GW_CICD_AUTH_TOKEN }}
+          subscription-token: ${{ secrets.GW_CICD_AUTHENTICATION_TOKEN }}
           scan-results-path: ${{ steps.container-scan.outputs.scan-report-path }}
