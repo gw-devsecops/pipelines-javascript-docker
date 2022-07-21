@@ -34,10 +34,7 @@ jobs:
         with:
           image-name: ${{ env.ACR_SERVER }}/${{ env.ACR_REPO_NAME }}:${{ github.sha }}
           # run-quality-checks provides CIS benchmark assessment
-          run-quality-checks: true
-          username: ${{ secrets.GW_ACR_USERNAME }}
-          password: ${{ secrets.GW_ACR_PASSWORD }}
-          token: ${{ secrets.GW_CICD_AUTHENTICATION_TOKEN }}
+          run-quality-checks: false
           
       - name: Login to Azure Container Registry
         uses: Azure/docker-login@v1
