@@ -25,7 +25,7 @@ jobs:
         
       - name: Build a sample Docker image
         run: |
-          docker build -t ${{ env.ACR_SERVER }}/${{ env.ACR_REPO_NAME }}:${{ github.sha }} -file ./app
+          docker build -t ${{ env.ACR_SERVER }}/${{ env.ACR_REPO_NAME }}:${{ github.sha }} ./app
           
       - name: Scan Docker image using Azure Container Scan action
         uses: Azure/container-scan@v0
