@@ -23,9 +23,9 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
         
-      - name: Build a sample Docker image with Firefox 
+      - name: Build a sample Docker image
         run: |
-          docker build -t ${{ env.ACR_SERVER }}/${{ env.ACR_REPO_NAME }}:${{ github.sha }} --file ./app/Dockerfile
+          docker build -t ${{ env.ACR_SERVER }}/${{ env.ACR_REPO_NAME }}:${{ github.sha }} -file ./app/Dockerfile
           
       - name: Scan Docker image using Azure Container Scan action
         uses: Azure/container-scan@v0
