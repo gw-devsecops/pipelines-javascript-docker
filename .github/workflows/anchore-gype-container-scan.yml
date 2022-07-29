@@ -17,6 +17,7 @@ jobs:
         id: scan
         with:
           image: "javscriptdocker"
+          fail-build: false
           acs-report-enable: true
       - name: upload Anchore scan SARIF report
         uses: github/codeql-action/upload-sarif@v2
